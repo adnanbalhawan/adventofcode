@@ -1,35 +1,52 @@
 class Solution():
     def __init__(self, file):
         self.file = file
+        self.raw_data = []
+        self.parsed_input = []
         self.solution = 0
-        self.get_data_from_file()
         # Custom Variables
-
+        
 
     def run(self):
         # Custom Function
-
+        self.get_input_from_file()
+        self.parse_input()
+        self.process_input()
         self.print_output()
-        
-    def print_output(self):
-        print(f'solution: {self.solution}')
 
-    def get_data_from_file(self):
+
+    def get_input_from_file(self):
         file = open(self.file, 'r')
         lines = file.readlines()
-        self.data = []
         for entry in lines:
-            self.data.append(entry.strip())
+            self.raw_data.append(entry.strip())
 
-
+    def parse_input(self):
+        # parse input in intended logic
+        pass
+    
+    def process_input(self):
+        pass
+    
+    #custom functions go here
+    
+    def print_output(self):
+        print(f'Result: {self.solution}')
+        
 
 if __name__ == '__main__':
-    file = 'test'
-    expected_test_result = 0
-    instance = Solution(file)
+    ##############################
+    #### Expected Test Input Value
+    expected_test_result = 5
+    ##############################
+    
+    print("Running Test Input first")
+    print("======================================")
+    instance = Solution(file='test')
     instance.run()
     if instance.solution != expected_test_result:
-        print("TEST Failed, aborting")
+        print("Test Input did not produce expected result, aborting")
     else:
-        file = 'input'
-        instance = Solution(file).run()
+        print("Test Input Passed, running challenge input")
+        print("======================================")
+        instance = Solution(file='input').run()
