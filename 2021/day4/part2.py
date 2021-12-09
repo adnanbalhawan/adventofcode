@@ -35,16 +35,10 @@ class Solution():
         self.data.remove(self.data[0])
         for entry in input_data:
             self.bingo_input.append(int(entry))
-        print(self.bingo_input)
+        # print(self.bingo_input)
 
     def get_board_structure(self):
-        return [
-            [{'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False} ],
-            [{'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False} ],
-            [{'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False} ],
-            [{'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False} ],
-            [{'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False} ]
-        ]
+        return [ [{'v': 0, 'm': False} for entry in range(5)] for row in range(5)]
 
     def generate_bingo_boards_from_input(self):
         board_index = -1
@@ -67,7 +61,7 @@ class Solution():
     
     def process_input(self):
         for called_number in self.bingo_input:
-            print(f'Calling: {called_number}')
+            # print(f'Calling: {called_number}')
             self.last_called_number = called_number
             self.flip_markers(called_number)
             self.check_winning_boards()

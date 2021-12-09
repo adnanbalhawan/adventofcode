@@ -36,13 +36,7 @@ class Solution():
         # print(self.bingo_input)
 
     def get_board_structure(self):
-        return [
-            [{'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False} ],
-            [{'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False} ],
-            [{'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False} ],
-            [{'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False} ],
-            [{'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False}, {'v': 0, 'm': False} ]
-        ]
+        return [ [{'v': 0, 'm': False} for entry in range(5)] for row in range(5)]
 
     def generate_bingo_boards_from_input(self):
         board_index = -1
